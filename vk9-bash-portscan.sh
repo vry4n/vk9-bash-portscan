@@ -7,6 +7,16 @@
 # example 1: ./vk9-bash-portscan.sh any 192.168.0.0/24 tcp
 # example 2: ./vk9-bash-portscan.sh 22,23 192.168.0.1 any
 
+function banner {
+  echo "__     ___  _____    ____                       _ _         "
+  echo "\ \   / / |/ / _ \  / ___|  ___  ___ _   _ _ __(_) |_ _   _ "
+  echo " \ \ / /| ' / (_) | \___ \ / _ \/ __| | | | '__| | __| | | |"
+  echo "  \ V / |  . \\__, |  ___) |  __/ (__| |_| | |  | | |_| |_| |"
+  echo "   \_/  |_|\_\ /_/  |____/ \___|\___|\__,_|_|  |_|\__|\__, |"
+  echo "                        By Vry4n                      |___/ "
+  echo "               ==========================                   "
+}
+
 # Values that the script needs to run
 PORT=$1
 IP=$2
@@ -247,6 +257,7 @@ function udp_scan {
 
 # Main function
 function main {
+	banner
 	# running the functions previously created so we gathered Ports, IP ranges, Subnet value
 	get_ports
 	get_mask
